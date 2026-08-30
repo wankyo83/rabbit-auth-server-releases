@@ -98,14 +98,14 @@ OFF로 되돌리면 확장앱은 기존 직접 접속 방식으로 동작합니�
 
 같은 내부 네트워크에서만 사용할 때는 포트포워딩이 필요하지 않습니다. 집 밖이나 다른 네트워크에서 서버에 직접 접속하려면 일반적으로 공유기에서 인증 서버 포트(기본 `9870`)를 포트포워딩해야 합니다. 포트포워딩 설정이 어렵거나 인터넷에 포트를 직접 공개하고 싶지 않다면 **Tailscale 사용을 권장합니다.** Tailscale을 사용하는 경우 앱과 인증 서버 장치가 같은 Tailscale 네트워크에 연결되어 있어야 합니다.
 
-### Docker/NAS 0.3.3
+### Docker/NAS 0.3.4
 
-- [Docker/NAS ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.3.3/rabbit-auth-server-docker-0.3.3.zip)
+- [Docker/NAS ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.3.4/rabbit-auth-server-docker-0.3.4.zip)
 - [Docker/NAS 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Docker-Install-KO.md)
 
-### Windows 0.4.2
+### Windows 0.4.3
 
-- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.2/RabbitAuthServer-Windows-x64-0.4.2.zip)
+- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.3/RabbitAuthServer-Windows-x64-0.4.3.zip)
 - [Windows 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Windows-Install-KO.md)
 
 ## 주의
