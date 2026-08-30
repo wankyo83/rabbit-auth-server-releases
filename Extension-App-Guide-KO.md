@@ -103,9 +103,9 @@ OFF로 되돌리면 확장앱은 기존 직접 접속 방식으로 동작합니�
 - [Docker/NAS ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.3.4/rabbit-auth-server-docker-0.3.4.zip)
 - [Docker/NAS 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Docker-Install-KO.md)
 
-### Windows 0.4.4
+### Windows 0.4.5
 
-- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.4/RabbitAuthServer-Windows-x64-0.4.4.zip)
+- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.5/RabbitAuthServer-Windows-x64-0.4.5.zip)
 - [Windows 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Windows-Install-KO.md)
 
 ## 주의
