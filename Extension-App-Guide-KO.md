@@ -144,9 +144,9 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 - 최신 안정 이미지: `ghcr.io/wankyo83/rabbit-auth-server:stable`
 - 0.3.5부터 기존 프로젝트를 다시 빌드·재생성하면 GHCR에서 최신 안정 이미지를 확인합니다. 기존 프로젝트 이름을 유지하면 브라우저 인증 데이터 볼륨도 유지됩니다.
 
-### Windows 0.4.5
+### Windows 0.4.6
 
-- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.5/RabbitAuthServer-Windows-x64-0.4.5.zip)
+- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.6/RabbitAuthServer-Windows-x64-0.4.6.zip)
 - [Windows 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Windows-Install-KO.md)
 
 ## 주의
