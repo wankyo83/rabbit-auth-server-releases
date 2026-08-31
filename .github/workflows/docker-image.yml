@@ -6,7 +6,7 @@ on:
       version:
         description: Docker source version under sources/docker
         required: true
-        default: 0.3.5
+        default: 0.3.6
 
 permissions:
   contents: read
