@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           version='${{ inputs.version }}'
           for attempt in $(seq 1 90); do
-            body="$(curl --silent --show-error --max-time 3 http://127.0.0.1:9870/health || true)"
+            body="$(curl --silent --show-error --max-time 3 --header 'Authorization: Bearer test-key' http://127.0.0.1:9870/health || true)"
             if node -e 'const v=JSON.parse(process.argv[1]); process.exit(v.ready && v.version===process.argv[2] ? 0 : 1)' "$body" "$version" 2>/dev/null; then
               echo "$body"
               exit 0
