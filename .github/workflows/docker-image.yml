@@ -1,0 +1,87 @@
+name: Publish Docker image
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Docker source version under sources/docker
+        required: true
+        default: 0.3.5
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: rabbit-auth-server-docker-publish
+  cancel-in-progress: false
+
+jobs:
+  build-test-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out release sources
+        uses: actions/checkout@v4
+
+      - name: Validate requested version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ inputs.version }}'
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          test -f "sources/docker/$version/Dockerfile"
+          test "$(node -p "require('./sources/docker/$version/package.json').version")" = "$version"
+
+      - name: Build image
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ inputs.version }}'
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/rabbit-auth-server:$version"
+          docker build --platform linux/amd64 --label "org.opencontainers.image.version=$version" --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" -t "$image" "sources/docker/$version"
+
+      - name: Start smoke-test container
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ inputs.version }}'
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/rabbit-auth-server:$version"
+          docker run -d --name rabbit-auth-smoke -e SERVER_KEY=test-key -e BROWSER_SANDBOX=false -p 9870:9870 "$image"
+
+      - name: Verify health and version
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ inputs.version }}'
+          for attempt in $(seq 1 90); do
+            body="$(curl --silent --show-error --max-time 3 http://127.0.0.1:9870/health || true)"
+            if node -e 'const v=JSON.parse(process.argv[1]); process.exit(v.ready && v.version===process.argv[2] ? 0 : 1)' "$body" "$version" 2>/dev/null; then
+              echo "$body"
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs rabbit-auth-smoke
+          exit 1
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push version and stable tags
+        shell: bash
+        run: |
+          set -euo pipefail
+          version='${{ inputs.version }}'
+          image="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/rabbit-auth-server:$version"
+          stable="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/rabbit-auth-server:stable"
+          docker push "$image"
+          docker tag "$image" "$stable"
+          docker push "$stable"
+
+      - name: Show container logs
+        if: always()
+        run: docker logs rabbit-auth-smoke || true
