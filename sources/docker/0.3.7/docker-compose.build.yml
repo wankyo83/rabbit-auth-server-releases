@@ -1,0 +1,32 @@
+# Offline/local-build fallback. Use docker-compose.yml for normal installation and updates.
+services:
+  rabbit-auth-server:
+    build: .
+    image: rabbit-auth-server:0.3.7-local
+    ports:
+      - "9870:9870"
+    environment:
+      SERVER_AUTH: "password"
+      SERVER_KEY: "replace-with-your-key"
+      ALLOWED_HOSTS: "*"
+      BROWSER_SANDBOX: "false"
+      AUTH_CONCURRENCY: "2"
+      TZ: Asia/Seoul
+    volumes:
+      - browser-data:/data
+    shm_size: 1gb
+    mem_limit: 2g
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "/app/src/healthcheck.mjs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  browser-data:
