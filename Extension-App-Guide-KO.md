@@ -57,6 +57,8 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 
 일반적인 사용자는 도메인 번호나 사이트 주소를 직접 수정할 필요가 없습니다.
 
+`xtoon 웹툰`도 같은 방식으로 중앙 신호등에서 확인된 최신 주소를 사용하며, 주소 확인이 실패하면 마지막 정상 주소를 유지합니다.
+
 ### 주소 갱신 방식
 
 지원되는 확장앱의 `설정`에서 주소 갱신 방식을 선택할 수 있습니다.
@@ -137,17 +139,19 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 
 같은 내부 네트워크에서만 사용할 때는 포트포워딩이 필요하지 않습니다. 집 밖이나 다른 네트워크에서 서버에 직접 접속하려면 일반적으로 공유기에서 인증 서버 포트(기본 `9870`)를 포트포워딩해야 합니다. 포트포워딩 설정이 어렵거나 인터넷에 포트를 직접 공개하고 싶지 않다면 **Tailscale 사용을 권장합니다.** Tailscale을 사용하는 경우 앱과 인증 서버 장치가 같은 Tailscale 네트워크에 연결되어 있어야 합니다.
 
-### Docker/NAS 0.3.6
+### Docker/NAS 0.3.7
 
-- [Docker/NAS ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.3.6/rabbit-auth-server-docker-0.3.6.zip)
+- [Docker/NAS ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.3.7/rabbit-auth-server-docker-0.3.7.zip)
 - [Docker/NAS 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Docker-Install-KO.md)
 - 최신 안정 이미지: `ghcr.io/wankyo83/rabbit-auth-server:stable`
 - 0.3.5부터 기존 프로젝트를 다시 빌드·재생성하면 GHCR에서 최신 안정 이미지를 확인합니다. 기존 프로젝트 이름을 유지하면 브라우저 인증 데이터 볼륨도 유지됩니다.
 
-### Windows 0.4.7
+### Windows 0.4.8
 
-- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.7/RabbitAuthServer-Windows-x64-0.4.7.zip)
+- [Windows ZIP 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.8/RabbitAuthServer-Windows-x64-0.4.8.zip)
 - [Windows 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Windows-Install-KO.md)
+
+Windows 0.4.8부터 새 버전을 자동으로 확인합니다. 새 버전이 있을 때만 알림을 표시하며, 사용자가 승인해야 다운로드와 설치를 진행합니다. 하단의 `업데이트 확인` 버튼으로 언제든 직접 확인할 수도 있습니다.
 
 ## 주의
 
