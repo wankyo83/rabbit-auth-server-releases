@@ -1,6 +1,6 @@
 {
-  "version": "0.4.9",
-  "fileName": "RabbitAuthServer-Windows-x64-0.4.9.zip",
-  "downloadUrl": "https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.9/RabbitAuthServer-Windows-x64-0.4.9.zip",
-  "sha256": "49D0D36896109C9B67EAA3861D3AC75107E1CE9EDD165EEEB8E5519906026D96"
+  "version": "0.4.10",
+  "fileName": "RabbitAuthServer-Windows-x64-0.4.10.zip",
+  "downloadUrl": "https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/v0.4.10/RabbitAuthServer-Windows-x64-0.4.10.zip",
+  "sha256": "848C71618B8D5F753F4655518B6C37AB71F06452F665D8211C05B5D91E845056"
 }
