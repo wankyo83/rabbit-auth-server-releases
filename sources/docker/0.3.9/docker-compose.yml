@@ -1,0 +1,39 @@
+# Easy-update configuration. Edit settings here; no .env file is needed.
+services:
+  rabbit-auth-server:
+    image: ghcr.io/wankyo83/rabbit-auth-server:stable
+    pull_policy: always
+    ports:
+      # Left: NAS access port (editable). Right: container port (keep 9870).
+      - "9870:9870"
+    environment:
+      SERVER_AUTH: "password"
+      # Set your own key, 4 characters or more. Keep quotes for keys like "0123".
+      # Do not use the NAS/site account password. Longer keys are also accepted.
+      SERVER_KEY: "replace-with-your-key"
+      # Accept any valid destination name/IP; SERVER_KEY is still required.
+      # No personal NAS name/IP needs to be registered. Keep the quotes.
+      # Optional restriction: replace * with comma-separated names/IPs (no port).
+      ALLOWED_HOSTS: "*"
+      # Default false for the tested Synology kernel. This reduces browser isolation.
+      BROWSER_SANDBOX: "false"
+      AUTH_CONCURRENCY: "2"
+      TZ: Asia/Seoul
+    volumes:
+      - browser-data:/data
+    shm_size: 1gb
+    mem_limit: 2g
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "/app/src/healthcheck.mjs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  browser-data:
