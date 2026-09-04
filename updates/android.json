@@ -1,7 +1,7 @@
 {
-  "version": "0.3.0-test9",
-  "versionCode": 13,
-  "fileName": "RabbitAuthServer-Android-0.3.0-test9.apk",
-  "downloadUrl": "https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/android-v0.3.0-test9/RabbitAuthServer-Android-0.3.0-test9.apk",
-  "sha256": "D1184FC19DA60925EEC42B16C25C1206DB61C9C3C95AA1173D977B484B2BD5B8"
+  "version": "0.3.0-test10",
+  "versionCode": 14,
+  "fileName": "RabbitAuthServer-Android-0.3.0-test10.apk",
+  "downloadUrl": "https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/android-v0.3.0-test10/RabbitAuthServer-Android-0.3.0-test10.apk",
+  "sha256": "F92E2B35AA8A78E43EDC510718484A3505E28B226BEDABC1F18D305236748CE2"
 }
