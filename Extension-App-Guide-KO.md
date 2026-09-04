@@ -153,9 +153,9 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 
 Windows 0.4.8 이상은 새 버전을 자동으로 확인합니다. 새 버전이 있을 때만 알림을 표시하며, 사용자가 승인해야 다운로드와 설치를 진행합니다. 하단의 `업데이트 확인` 버튼으로 언제든 직접 확인할 수도 있습니다.
 
-### Android 0.3.0-test8
+### Android 0.3.0-test9
 
-- [Android APK 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/android-v0.3.0-test8/RabbitAuthServer-Android-0.3.0-test8.apk)
+- [Android APK 다운로드](https://github.com/wankyo83/rabbit-auth-server-releases/releases/download/android-v0.3.0-test9/RabbitAuthServer-Android-0.3.0-test9.apk)
 - [Android 설치 설명서](https://dc-toki.pages.dev/tools/rabbit-auth-server/Android-Install-KO.md)
 
 Android판은 같은 태블릿에 설치된 Mihon 전용입니다. 서버 주소는 `http://127.0.0.1:9898`이며 포트포워딩과 Tailscale은 필요하지 않습니다. 앱을 열면 새 버전을 자동으로 확인하며, 앱 하단에서 APK 다운로드와 SHA-256 검증 후 설치 화면을 열 수 있습니다. Android 보안상 마지막 설치 승인은 사용자가 눌러야 합니다.
