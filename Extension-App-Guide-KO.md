@@ -2,11 +2,13 @@
 
 ## 1. 저장소 주소
 
-사용하는 앱에 맞는 저장소 주소를 추가합니다. 세 주소는 서로 다른 플랫폼용이므로 앱에 맞는 주소를 사용하세요.
+사용하는 앱에 맞는 저장소 주소를 추가합니다. 저장소는 플랫폼과 콘텐츠 종류에 따라 구분되므로 앱에 맞는 주소를 사용하세요.
 
 | 앱 | 저장소 주소 |
 |---|---|
 | Mihon (Android) | `https://dc-toki.pages.dev/index.min.json` |
+| Aniyomi 애니메이션·영상 (Android) | `https://dc-toki-aniyomi-media.pages.dev/index.min.json` |
+| Aniyomi 만화·웹툰·소설 (Android) | `https://dc-toki-aniyomi-manga.pages.dev/index.min.json` |
 | Tachimanga (iPhone/iPad) | `https://dc-toki-ios.pages.dev/index.min.json` |
 | Suwayomi | `https://dc-toki-suwayomi.pages.dev/index.min.json` |
 
@@ -16,13 +18,35 @@
 
 1. `More → Settings → Browse → Extension repos(또는 Extension stores)`로 이동합니다.
 2. `Add`를 눌러 위의 Android 저장소 URL을 붙여 넣습니다.
-3. `Browse → Extensions`에서 목록을 새로 고칩니다.
-4. 필요한 확장앱을 설치합니다.
-5. `Browse → Sources`에서 한국어 소스를 선택합니다.
+3. `설정 → 찾아보기`에서 `성인 콘텐츠 소스 활성화`를 켭니다.
+4. `Browse → Extensions`에서 목록을 새로 고칩니다.
+5. 필요한 확장앱을 설치합니다.
+6. `Browse → Sources`에서 한국어 소스를 선택합니다.
 
 Android에서 처음 확장앱을 설치할 때 시스템이 설치 권한을 물으면 Mihon의 설치를 허용합니다.
 
-## 3. Tachimanga (iPhone/iPad)
+## 3. Aniyomi (Android)
+
+Aniyomi에서는 애니메이션·영상 확장앱과 만화·웹툰·소설 확장앱의 저장소가 분리되어 있습니다.
+
+| 종류 | 저장소 주소 |
+|---|---|
+| 애니메이션·영상 | `https://dc-toki-aniyomi-media.pages.dev/index.min.json` |
+| 만화·웹툰·소설 | `https://dc-toki-aniyomi-manga.pages.dev/index.min.json` |
+
+1. `더 보기 → 설정 → 찾아보기`로 이동합니다.
+2. `성인 콘텐츠 소스 활성화`를 켭니다.
+3. 애니메이션·영상 저장소는 `애니메이션 확장 앱 저장소`에 추가합니다.
+4. 만화·웹툰·소설 저장소는 `만화 확장 앱 저장소`에 추가합니다.
+5. `찾아보기 → 확장 앱`에서 목록을 새로 고칩니다.
+6. `DC Media` 또는 `DC Manga` 확장앱을 설치합니다.
+7. 설치된 확장앱에 `신뢰되지 않음`이 표시되면 방패 모양 버튼을 눌러 신뢰 처리합니다.
+
+`DC Media`는 애니라이프와 영화·드라마·예능·애니·음악프로·시사 소스를 하나의 패키지로 제공합니다. `DC Manga`는 만화·웹툰·소설 소스를 하나의 패키지로 제공합니다.
+
+패키지 안의 특정 소스가 업데이트되면 묶음 확장앱 전체가 한 번 업데이트됩니다. 업데이트하더라도 각 소스의 고유 ID는 유지되므로 기존 서재와 열람 기록은 계속 연결됩니다.
+
+## 4. Tachimanga (iPhone/iPad)
 
 ### 최초 준비
 
@@ -38,7 +62,7 @@ Tachimanga는 국내 App Store에 없으므로 해외 App Store에서 설치합�
 
 `Show NSFW Extensions and Sources`가 꺼져 있으면 설치가 끝났어도 성인 소스와 확장앱이 목록에 숨겨질 수 있습니다.
 
-## 4. Suwayomi
+## 5. Suwayomi
 
 1. Suwayomi Web UI에서 `Settings`를 엽니다.
 2. 버전에 따라 `Browse` 또는 `Extensions` 안의 `Extension repositories`를 엽니다.
@@ -47,7 +71,7 @@ Tachimanga는 국내 App Store에 없으므로 해외 App Store에서 설치합�
 
 Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayomi 서버가 실행되는 컨테이너에서 저장소와 인증 서버 주소에 접근할 수 있어야 합니다.
 
-## 5. 확장앱 설정
+## 6. 확장앱 설정
 
 ### 사이트 주소 자동 갱신
 
@@ -103,7 +127,7 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 
 기능을 OFF로 되돌리면 확장앱은 기존 직접 접속 방식으로 동작합니다. ON/OFF 설정은 소스 ID, 서재, 읽음 상태 또는 기존 다운로드 항목을 변경하지 않습니다.
 
-## 6. 필터 탭과 토끼 신호등
+## 7. 필터 탭과 토끼 신호등
 
 ### 필터 탭의 커스텀 기능
 
@@ -131,7 +155,7 @@ Suwayomi 전용 저장소는 Android/Mihon 저장소와 별개입니다. Suwayom
 
 토끼 신호등은 작품을 읽는 소스가 아니라 최신 주소와 중앙 신호등 상태를 확인하는 보조 확장앱입니다.
 
-## 7. 외부 인증 서버 설치
+## 8. 외부 인증 서버 설치
 
 사용하는 환경에 맞는 서버 파일을 다운로드한 뒤 해당 설치 설명서를 따라 설정합니다.
 
@@ -166,7 +190,7 @@ Newtoki 유료 잠금 회차는 무한 대기 대신 안내 이미지 1장으로
 
 ## 주의
 
-확장앱과 저장소는 Mihon·Tachimanga·Suwayomi 본체와 별도로 관리되는 비공식 구성입니다. 신뢰할 수 있는 저장소만 추가하고, 이용 지역의 법률과 사이트 이용 약관을 확인하세요.
+확장앱과 저장소는 Mihon·Aniyomi·Tachimanga·Suwayomi 본체와 별도로 관리되는 비공식 구성입니다. 신뢰할 수 있는 저장소만 추가하고, 이용 지역의 법률과 사이트 이용 약관을 확인하세요.
 
 ## 참고
 
